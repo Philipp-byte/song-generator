@@ -1,0 +1,22 @@
+name = "song-generator"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+# Wie viele Songs pro Tag erlaubt sind (alle Änderungen zählen mit).
+# 65 Songs x 0,08 $ = 5,20 $ = ca. 4,50-4,80 € pro Tag (Obergrenze 5 €).
+DAILY_LIMIT = "65"
+# Welche Webseiten den Worker benutzen dürfen (kommagetrennt).
+ALLOWED_ORIGINS = "https://philipp-byte.github.io,http://localhost:8000"
+# Musikmodell von Google.
+MODEL = "lyria-3.5"
+
+# Speicher für Tageszähler und Login-Sperre.
+# Die id wird beim ersten Einrichten eingetragen (siehe README).
+[[kv_namespaces]]
+binding = "STORE"
+id = "KV_ID_HIER_EINTRAGEN"
+
+# Secrets (NICHT hier eintragen, sondern mit "npx wrangler secret put ..."):
+#   GEMINI_API_KEY
+#   PASSWORD
