@@ -229,9 +229,9 @@
 
 <script>
   // ---------- Einstellungen ----------
-  // Adresse des Cloudflare Workers (wird beim Einrichten eingetragen).
-  const WORKER_URL = "https://song-generator.WORKER-SUBDOMAIN.workers.dev";
-  const API = location.hostname === "localhost" ? "http://localhost:8787" : WORKER_URL;
+  // Adresse des Servers bei Google Cloud Run (wird beim Einrichten eingetragen).
+  const SERVER_URL = "https://SERVER-ADRESSE.run.app";
+  const API = location.hostname === "localhost" ? "http://localhost:8787" : SERVER_URL;
 
   const $ = (id) => document.getElementById(id);
   let token = load("token");
